@@ -11,7 +11,7 @@ function Loading() {
 
 
                 <MotionBoldp title={'UNVEILING INDONESIA'}/>
-                <MotionRegularp title={""}/>
+                <MotionRegularp title={"a project by DDS."}/>
 
 
 
