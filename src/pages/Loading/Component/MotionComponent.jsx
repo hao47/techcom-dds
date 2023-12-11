@@ -9,8 +9,8 @@ function MotionBoldp({title}) {
         <motion.p
             initial={{opacity: 0, scale: 1}}
             animate={{opacity: 1, scale: 1}}
-            transition={{duration: 1.5, delay: 1}}
-            className=" text-white text-center xl:text-8xl md:text-6xl sm:text-4xl font-montserrat"
+            transition={{duration: 1, delay: 1}}
+            className=" text-white text-center xl:text-8xl md:text-5xl sm:text-4xl font-montserrat"
         >
             {title}
         </motion.p>
@@ -24,7 +24,7 @@ function MotionRegularp({title}) {
         <motion.p
             initial={{opacity: 0, scale: 1}}
             animate={{opacity: 1, scale: 1}}
-            transition={{duration: 2, delay: 2}}
+            transition={{duration: 2, delay: 2.5}}
             className={'text-white text-center xl:text-2xl md:text-1xl sm:text-1xl font-montserrat'}
         >
             {title}
