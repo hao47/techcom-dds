@@ -24,7 +24,7 @@ function Forum() {
 
 function SideBar({ onCreateClick, onBackClick, showCreate, onHastagsClick }) {
     return (
-        <div className='w-[15%] p-4 flex flex-col '>
+        <div className='w-max p-4 flex flex-col'>
             <Category />
             <Hashtag showCreate={showCreate} onHastagsClick={onHastagsClick} />
             {showCreate ? (<Back onClick={onBackClick} />) : (<Create onClick={onCreateClick} />)}
@@ -43,7 +43,7 @@ function Body({ showCreate, selectedHashtagId }) {
 function Category() {
     return (
         <div className=' bg-[#404040] w-full p-2 mb-2 rounded-md flex flex-col'>
-            <h1 className='font-montserrat text-lg text-white mb-2'>Category</h1>
+            <h1 className='font-montserrat text-white mb-2 text-xs sm:text-sm lg:text-base xl:text-lg'>Category</h1>
             <CategoryItem
                 title={"Trending"}
                 img={'src/assets/icons/trending.png'}
@@ -55,8 +55,8 @@ function Category() {
 function CategoryItem({title, img}) {
     return (
         <div className='w-full p-2 flex flex-row rounded-md hover:bg-[#555555] transition duration-200 ease-in-out'>
-            <img className='mr-2 h-fit w-fit place-self-center' src={img} alt="icon"/>
-            <h1 className='font-poppins font-medium text-xs text-white'>{title}</h1>
+            <img className='mr-1 h-fit place-self-center w-3 sm:w-4 lg:w-5 xl:w-5 2xl:w-fit' src={img} alt="icon"/>
+            <h1 className='font-poppins font-medium text-white text-xs lg:text-sm xl:text-base'>{title}</h1>
         </div>
     )
 }
@@ -76,7 +76,7 @@ function Hashtag({showcreate,onHastagsClick}) {
 
     return (
         <div className=' bg-[#404040] w-full p-2 mb-2 rounded-md flex flex-col'>
-            <h1 className='font-montserrat text-lg text-white mb-2'>Hashtag</h1>
+            <h1 className='font-montserrat text-white mb-2 text-xs sm:text-sm lg:text-base xl:text-lg '>Hashtag</h1>
 
 
             {

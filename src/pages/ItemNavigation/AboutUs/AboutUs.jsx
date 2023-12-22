@@ -91,54 +91,33 @@ export default function AboutUs() {
 
                 <div ref={slider} className="containerss bg=[#191919] overflow-hidden">
 
-                    <div className="panel bg-[#191919] flex  max-[600px]:block">
-                        <div className='w-[50%] h-screen  max-[600px]:w-full  max-[600px]:h-1/2 '>
-
-                            <div>
-                                <img src="/src/assets/images/dayak.png"
-                                     className={'grayscale hover:scale-110 delay-300 ease-in hover:grayscale-0 transition duration-300  h-80 absolute top-[150px] left-44 -rotate-12 border-8 border-b-[50px]'}
+                    <div className="panel bg-[#191919] flex w-full max-[600px]:block">
+                        <div className='w-[50%] items-center flex justify-center max-[600px]:items-center max-[600px]:h-max max-[600px]:w-full max-[600px]:mt-20'>
+                                <img src="/src/assets/images/grayscaleImage.png"
+                                className="h-[200px] max-[600px]:h-[300px] sm:h-[300px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] rounded-md"
                                      alt=""/>
-                                <img src="/src/assets/images/sunda.png"
-                                     className={'grayscale hover:scale-110 delay-300 ease-in hover:grayscale-0 transition duration-300  h-80 absolute top-[190px] left-[500px] rotate-12 border-8 border-b-[50px]'}
-                                     alt=""/>
-                                <img src="/src/assets/images/ngaben.png"
-                                     className={'grayscale hover:scale-110 delay-300 ease-in hover:grayscale-0 transition duration-300  h-80 absolute top-[150px] left-[320px] -rotate-2 border-8 border-b-[50px]'}
-                                     alt=""/>
-
-
-                                <img src="/src/assets/images/music.png"
-                                     className={'grayscale hover:scale-110 delay-300 ease-in hover:grayscale-0 transition duration-300  h-[340px] absolute top-[460px] left-[205px] -rotate-6 border-8 border-b-[50px]'}
-                                     alt=""/>
-                                <img src="/src/assets/images/piring.png"
-                                     className={'grayscale hover:scale-110 delay-300 ease-in hover:grayscale-0 transition duration-300  h-[340px] absolute top-[460px] left-[450px] rotate-6 border-8 border-b-[50px]'}
-                                     alt=""/>
-
-                            </div>
-
                         </div>
 
-                        <div className='w-[50%] h-screen flex justify-start items-center  max-[600px]:w-full  max-[600px]:h-1/2 '>
-
-
+                        <div className='w-[50%] h-screen flex justify-start items-center max-[600px]:w-full  max-[600px]:h-1/2'>
                             <TextContentHorizontalFoto title={'THE PROBLEM'} subtitle={'the cultural fade of Indonesia'}
                                                        description={'Technology in Indonesia is developing every day, and globalization cannot be avoided. Without realizing it, the younger generation in Indonesia is starting to forget the traditional culture that define our Nation. This cannot persist unattended,our cultural legacy must be preserved, we need new heroes.'}/>
-
-
                         </div>
 
                     </div>
+
+
                     <div className="panel bg-[#191919] overflow-hidden">
 
                         <div className={'flex w-full max-[600px]:block'}>
                             <div className='w-[50%] h-[95vh] flex justify-end items-center  max-[600px]:hidden'>
-                                <div className='w-[50%] flex justify-end  items-center'>
+                                <div className='w-[70%] flex justify-end  items-center'>
                                     <div className='w-[100%]'>
-                                        <p className='font-montserrat text-2xl mr-7 mb-5 text-end text-white '>THE
+                                        <p className='font-montserrat mb-6 max-[600px]:ml-0 text-end text-white max-[600px]:text-center text-2xl lg:text-3xl '>THE
                                             HEROES</p>
-                                        <p className='font-montserrat text-4xl mb-3 text-white text-end'>programmers,<br/>
+                                        <p className='font-montserrat mb-3 text-white text-end max-[600px]:text-center text-2xl lg:text-3xl'>programmers,<br/>
                                             suit up</p>
 
-                                        <p className='font-montserrat font-thin text-1xl mt-3 text-white text-end'>When
+                                        <p className='font-montserrat font-extralight text-white text-end max-[600px]:text-center max-[600px]:px-10 max-[600px]:text-sm lg:text-lg xl:text-xl'>When
                                             your back is against the wall, the only way forward is to roll up your
                                             sleeves and get to work. Our mission is clear – a dedicated team determined
                                             to revive and preserve traditional Indonesian culture. As we launch this
@@ -149,37 +128,34 @@ export default function AboutUs() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='w-[50%] h-[95vh] flex justify-center items-end  max-[600px]:items-center max-[600px]:mt-20 max-[600px]:h-1/2 max-[600px]:w-full'>
-                                <img src="/src/assets/images/founder.jpg" className={'h-[700px] max-[600px]:h-[300px] mb-4'} alt=""/>
+                            
+                            <div className='w-[50%] items-center flex justify-center max-[600px]:items-center max-[600px]:h-max max-[600px]:w-full max-[600px]:mt-20'>
+                                <img src="/src/assets/images/studiophoto.png" className={'h-[200px] max-[600px]:h-[300px] sm:h-[300px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] rounded-md'} alt=""/>
                             </div>
 
-
-                            <div className='w-[50%] h-[95vh] hidden  justify-center items-center  max-[600px]:flex max-[600px]:h-1/2    max-[600px]:w-full'>
-                                {/*<div className='w-[50%] flex justify-end  items-center'>*/}
+                            {/* w-[50%] h-[95vh] hidden  justify-center items-center  max-[600px]:flex max-[600px]:w-full  max-[600px]:h-1/2 */}
+                            <div className='w-[50%] h-screen hidden  justify-center items-center  max-[600px]:flex max-[600px]:w-full  max-[600px]:h-1/2'>
                                     <div className='w-fit'>
-                                        <p className='font-montserrat text-2xl mr-7 mb-5  text-white max-[600px]:text-lg text-center mx-auto'>THE
+                                        <p className='font-montserrat mb-6 text-center text-white max-[600px]:text-center text-2xl lg:text-3xl '>THE
                                             HEROES</p>
-                                        <p className='font-montserrat text-4xl mb-3 text-white text-center max-[600px]:text-lg'>programmers,
+                                        <p className='font-montserrat mb-3 text-white text-start max-[600px]:text-center text-2xl lg:text-3xl'>programmers,
                                             suit up</p>
 
-                                        <p className='font-montserrat font-thin text-1xl mt-3 text-white text-center  max-[600px]:px-20 max-[600px]:text-lg line-clamp-6'>When
+                                        <p className='font-montserrat font-thin text-1xl text-white text-center  max-[600px]:px-20 line-clamp-6 max-[600px]:text-sm lg:text-lg xl:text-xl'>When
                                             your back is against the wall, the only way forward is to roll up your
-                                            sleeves and get to work. Our mission is clear – a dedicated team determined
+                                            sleeves and get to work. Our mission is clear, a dedicated team determined
                                             to revive and preserve traditional Indonesian culture. As we launch this
                                             website, we invite you to join us in this final chapter, where the vibrant
                                             threads of our heritage weave a story that echoes through generations.
                                             Until then, see you at the final.</p>
 
                                     </div>
-                                {/*</div>*/}
                             </div>
 
                         </div>
 
-                        <div className={'w-full h-[5vh] flex justify-center items-center cursor-pointer'} onClick={() =>// Menggulir ke elemen paling bawah dengan efek smooth
+                        <div className={'w-full h-[5vh] flex justify-center items-center cursor-pointer max-[600px]:items-end'} onClick={() =>// Menggulir ke elemen paling bawah dengan efek smooth
                             document.body.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'nearest'})}>
-
-
                             <img src="/src/assets/images/panah_bawah.png" className={'animate-bounce'} alt=""/>
                         </div>
 

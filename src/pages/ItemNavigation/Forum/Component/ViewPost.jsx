@@ -3,10 +3,10 @@ import React, {useState} from "react";
 export function Create({onClick}) {
     return (
         <div className=' bg-[#404040] w-full p-2 mb-2 rounded-md flex flex-col'>
-            <img className='rounded-md mb-3' src="src/assets/gifs/create.gif" alt="GIF"/>
+            <img className='rounded-md mb-3 h-fit w-[170px] lg:w-[220px] xl:w-[270px]' src="src/assets/gifs/create.gif" alt="GIF"/>
             <button 
             onClick={onClick} 
-            className="bg-transparent hover:bg-white text-white font-montserrat hover:text-[#555555] py-2 border border-white rounded-full transition duration-300 ease-in-out">
+            className="bg-transparent hover:bg-white text-white font-montserrat hover:text-[#555555] py-2 border border-white rounded-full transition duration-300 ease-in-out text-xs sm:text-sm lg:text-base xl:text-lg">
                 Create Post
             </button>
         </div>
