@@ -41,3 +41,13 @@
     height: 25vh;
     margin: 1em;
 }
+.floating-text {
+    position: absolute;
+    transform: translateY(-50%);  /* Adjust as needed to position the text relative to the FBX model */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    pointer-events: none;  /* Ensures the text doesn't interfere with mouse events */
+}

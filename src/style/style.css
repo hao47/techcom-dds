@@ -33,7 +33,14 @@
 .bg-custom-lagiii{
     background-image: url("/src/assets/images/gerobak.png");
 }
-
+.bg-custom-orang{
+    background-image: url("/src/assets/images/finish.png");
+}.bg-custom-orang-lagi{
+    background-image: url("/src/assets/images/finish.png");
+}
+.bg-custom-house{
+    background-image: url("/src/assets/images/rumah-jawa.png");
+}
 .bg-custom-lagi-bang::before {
     content: "";
     position: absolute;

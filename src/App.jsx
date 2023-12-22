@@ -8,6 +8,7 @@ import AboutUs from "./pages/ItemNavigation/AboutUs/AboutUs.jsx";
 import Explore from "./pages/Explore/Explore.jsx";
 import Explorer from "./pages/ItemNavigation/Explorer/Explorer.jsx";
 import Detail from "./pages/ItemNavigation/Explorer/Detail.jsx";
+import HomeDetail from "./pages/ItemNavigation/Explorer/HomeDetail.jsx";
 const navigationRoutes = ['/', '/explore', '/aboutus','/support'];
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
                         <Route path='/' element={<Home />} />
                         <Route path='/explore' element={<Explorer />} />
                         <Route path='/explore/detail' element={<Detail />} />
-                        <Route path='/forum' element={<Forum />} />
+                        <Route path='/explore/detail/home' element={<HomeDetail />} />
+                        {/*<Route path='/forum' element={<Forum />} />*/}
                         <Route path='/aboutus' element={<AboutUs />} />
                     </Routes>
                 </main>

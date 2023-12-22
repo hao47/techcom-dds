@@ -1,45 +1,44 @@
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
-gsap.registerPlugin(ScrollTrigger);
+const Testing = () => {
+    const textRef = useRef(null);
 
-export default function Testing() {
+    useEffect(() => {
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 2, });
 
-    useLayoutEffect(() => {
-
-
-        gsap.set(".photo:not(:first-child)", {opacity:0, scale:0.5})
-
-        const animation = gsap.to(".photo:not(:first-child)", {
-            opacity:1, scale:1, duration:1, stagger:1
+        tl.to(textRef.current, {
+            duration: 0.5,
+            rotate: 5,
+            y: -10,
+            x:100,
+            opacity: 0.8,
+            ease: 'power3.inOut',
         })
-
-
-
-
-        let ctx = gsap.context(() => {
-            ScrollTrigger.create({
-                trigger:".gallery",
-                start:"top top",
-                end:"bottom bottom",
-                pin:".right",
-                animation: animation,
-                scrub:true,
-                markers:true
+            .to(textRef.current, {
+                duration: 0.5,
+                rotate: -5,
+                y: 10,
+                x:200,
+                opacity: 1,
+                ease: 'power3.inOut',
             })
+            .to(textRef.current, {
+                duration: 0.5,
+                rotate: 0,
+                y: 0,
 
-        }, this);
-        return () => ctx.revert();
-    });
+                x:300,
+                opacity: 0.8,
+                ease: 'power3.inOut',
+            });
+    }, []);
 
     return (
-        <>
-
-
-            <div className="spacer"></div>
-            <div className="spacer"></div>
-            <div className="spacer"></div>
-        </>
+        <h1 ref={textRef} className={'inline-block text-white font-montserrat font-bold text-6xl'}>
+            Scrapbook Animation
+        </h1>
     );
 }
+
+export default Testing;

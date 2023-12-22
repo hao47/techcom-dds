@@ -274,7 +274,7 @@ function Navigation() {
 
 
                       <NavbarItem title={'Home'} link={'/'}/>
-                      <NavbarItem title={'Forum'} link={'/forum'}/>
+                      {/*<NavbarItem title={'Forum'} link={'/forum'}/>*/}
                       <NavbarItem title={'About Us'} link={'/aboutus'}/>
 
 

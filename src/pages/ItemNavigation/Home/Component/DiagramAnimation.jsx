@@ -113,7 +113,7 @@ console.log(-innerHeight /2)
                     <div ref={el => diagraAnimation = el}>
 
                         <div
-                            className={'text-white font-poppins mx-52 mb-24 max-[600px]:w-full max-[600px]:mx-4 max-[600px]:my-4 flex-col  justify-start'}>
+                            className={'text-white font-poppins mx-52 mb-24 max-[600px]:w-full max-[600px]:mx-4  max-[600px]:hidden max-[600px]:my-4 flex-col  justify-start'}>
                             <p className={'font-bold'}>01</p>
                             <p className={'font-medium mt-3 '}>If there was a website for learning culture that was
                                 interactive
@@ -160,7 +160,7 @@ console.log(-innerHeight /2)
                     <div ref={el => diagraAnimation1 = el}>
 
                         <div
-                            className={'text-white font-poppins mx-52  max-[600px]:w-full max-[600px]:mx-4 max-[600px]:my-4 flex-col  justify-start'}>
+                            className={'text-white font-poppins mx-52  max-[600px]:hidden max-[600px]:w-full max-[600px]:mx-4 max-[600px]:my-4 flex-col  justify-start'}>
                             <p className={'font-bold'}>02</p>
                             <p className={'font-medium mt-3 '}>If there was a website for learning culture that was
                                 interactive

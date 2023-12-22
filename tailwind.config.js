@@ -10,6 +10,7 @@ export default {
       poppins: ['Poppins', 'sans-serif'],
       dela: ['Monsieur La Doulaise', 'cursive'],
       inter: ['Inter', 'sans-serif'],
+      annie: ['Annie Use Your Telescope', 'cursive'],
     },
     extend: {
       radialGradientColors: theme => theme('colors'),
