@@ -18,28 +18,39 @@
  }
 .bg-custom-lagi{
     background-image: url("/src/assets/images/gunung.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 .bg-custom-lagi-bang{
     background-image: url("/src/assets/images/orang.png");
+    background-size: cover;
 }
 
 .bg-custom-lagi-banga{
     background-image: url("/src/assets/images/anak.png");
+    background-size: cover;
 }
 .bg-custom-lagii{
     background-image: url("/src/assets/images/gotong.png");
+    background-size: cover;
 }
 
 .bg-custom-lagiii{
     background-image: url("/src/assets/images/gerobak.png");
+    background-size: cover;
 }
 .bg-custom-orang{
     background-image: url("/src/assets/images/finish.png");
+    background-size: cover;
+
 }.bg-custom-orang-lagi{
     background-image: url("/src/assets/images/finish.png");
+    background-size: cover;
 }
 .bg-custom-house{
     background-image: url("/src/assets/images/rumah-jawa.png");
+    background-size: cover;
 }
 .bg-custom-lagi-bang::before {
     content: "";

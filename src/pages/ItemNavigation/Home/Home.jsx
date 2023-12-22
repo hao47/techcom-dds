@@ -177,9 +177,6 @@ function Home() {
                         PURPOSE</p>
                 </div>
             </div>
-
-
-
             <DiagramAnimation/>
             <TimeLineAnimation/>
             {/* <Footer  f1={"Home"} f2={"Forum"} f3={"About Us"}/> */}

@@ -226,7 +226,7 @@ function Navigation() {
     return (
       <>
           <nav id={'navbar'}
-               className= {`glass-container  p-4 rounded-full bg-green-950 m-4 ${navbarPosition} z-50 w-[98.5%] max-[600px]:m-0 max-[600px]:rounded-none max-[600px]:w-full`}
+               className= {`glass-container  p-4 rounded-full bg-green-950 m-4 ${navbarPosition} z-50 w-[98.5%] max-[800px]:m-0 max-[800px]:rounded-none max-[800px]:w-full`}
 
           >
 
@@ -258,7 +258,7 @@ function Navigation() {
                       </div>
                   </Link>
 
-                  <div className="border-2 py-2 px-5 rounded-full border-white hover:bg-white hover:text-black group cursor-pointer hidden max-[600px]:rounded-none max-[600px]:hidden">
+                  <div className="border-2 py-2 px-5 rounded-full border-white hover:bg-white hover:text-black group cursor-pointer hidden max-[800px]:rounded-none max-[800px]:hidden">
                       <p className="text-white  group-hover:text-black  font-poppins text-[1rem] ">Menu</p>
                   </div>
 
@@ -269,7 +269,7 @@ function Navigation() {
                       </svg>
                   </button>
 
-                  <ul className='flex space-x-12 max-[600px]:hidden'>
+                  <ul className='flex space-x-12 max-[800px]:hidden'>
 
 
 
