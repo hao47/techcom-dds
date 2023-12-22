@@ -7,17 +7,43 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { extend } from '@react-three/fiber';
 import gsap from "gsap";
 import { Water } from "three/examples/jsm/objects/Water.js";
-import {Html, Sky} from "@react-three/drei";
-import {useNavigate} from "react-router-dom";
+import {Html} from "@react-three/drei";
 extend({ OrbitControls });
 
-import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 
-extend({OutlinePass})
 
+function Controls() {
+    const controlsRef = useRef();
+    const { camera, gl } = useThree();
+
+    useEffect(() => {
+        controlsRef.current.update();
+    });
+
+    return (
+        <orbitControls
+            ref={controlsRef}
+            args={[camera, gl.domElement]}
+            minDistance={480}
+            maxDistance={450}
+            maxPolarAngle={100}
+            dampingFactor={0.05}
+            maxPolarAngle={Math.PI / 5}
+        />
+    );
+}
 
 function FBXModel({xpos,ypos,zpos, path, ...props }) {
 
+    const islandColors = [
+        0xff0000,
+        0x00ff00,
+        0x0000ff,
+        0x0000ff,
+        0x0000ff,
+    ];
+    const colorIndex = props.index % islandColors.length;
+    const color = islandColors[colorIndex];
 
     const handleClick = () => {
         console.log("halo");
@@ -25,8 +51,7 @@ function FBXModel({xpos,ypos,zpos, path, ...props }) {
         const targetPosition = {
             x: fbxRef.current.position.x + xpos,
             y: fbxRef.current.position.y + ypos,
-            z: fbxRef.current.position.z + zpos,
-
+            z: fbxRef.current.position.z + zpos
         };
 
         console.log(fbxRef.current.position.x);
@@ -39,7 +64,7 @@ function FBXModel({xpos,ypos,zpos, path, ...props }) {
 
         gsap.fromTo(
             camera.position,
-            {opacity: 0}, // mulai dengan opacity 0
+            { opacity: 0 }, // mulai dengan opacity 0
             {
                 ...targetPosition,
                 opacity: 1, // akhir dengan opacity 1
@@ -50,7 +75,7 @@ function FBXModel({xpos,ypos,zpos, path, ...props }) {
 
         gsap.fromTo(
             camera.rotation,
-            {opacity: 0}, // mulai dengan opacity 0
+            { opacity: 0 }, // mulai dengan opacity 0
             {
                 ...targetRotation,
                 opacity: 1, // akhir dengan opacity 1
@@ -61,12 +86,13 @@ function FBXModel({xpos,ypos,zpos, path, ...props }) {
     };
 
 
+
     const fbxRef = useRef();
     const fbx = useLoader(FBXLoader, path);
     const [isHovered, setIsHovered] = useState(false);
     const texture = new TextureLoader().load('/src/assets/images/tanah.jpg');
 
-    let {camera} = useThree();
+    let { camera } = useThree();
 
     useEffect(() => {
         camera.position.set(0, 500, 0);
@@ -79,10 +105,41 @@ function FBXModel({xpos,ypos,zpos, path, ...props }) {
         });
     }, [fbx]);
 
+    useEffect(() => {
+        const originalColors = new Map();
+
+        fbx.traverse((child) => {
+            if (child.isMesh) {
+                if (!originalColors.has(child)) {
+                    originalColors.set(child, child.material.color.clone());
+                }
+
+                const colorIndex = props.index % islandColors.length;
+                const color = islandColors[colorIndex];
+
+                if (isHovered) {
+                    child.material.color.set(color);
+                } else {
+                    child.material.color.copy(originalColors.get(child));
+                }
+                child.material.needsUpdate = true;
+            }
+        });
+
+        return () => {
+            originalColors.forEach((color, child) => {
+                child.material.color.copy(color);
+                child.material.needsUpdate = true;
+            });
+        };
+    }, [fbx, isHovered, props.index]);
+
 
     return (
         <>
             <primitive
+                // className={'cursor-pointer'}
+                onClick={handleClick}
                 ref={fbxRef}
                 {...props}
                 object={fbx}
@@ -91,16 +148,8 @@ function FBXModel({xpos,ypos,zpos, path, ...props }) {
             />
             {isHovered && (
                 <Html position={[fbxRef.current.position.x, fbxRef.current.position.y + 50, fbxRef.current.position.z]}>
-                    <div className="floating-text">
-                        Pulau {
-                        <>
-                            {props.index + 1 == 1 && "coming soon"}
-                            {props.index + 1 == 2 && "coming soon"}
-                            {props.index + 1 == 3 && "coming soon"}
-                            {props.index + 1 == 5 && "jawa"}
-                            {props.index + 1 == 4 && "coming soon"}
-                        </>
-                    }
+                    <div style={{ color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '5px 10px', borderRadius: '5px' }}>
+                        Pulau {props.index + 1}
                     </div>
                 </Html>
             )}
@@ -108,30 +157,51 @@ function FBXModel({xpos,ypos,zpos, path, ...props }) {
     );
 }
 
+function WaterEffect() {
+    const { scene } = useThree();
+    const waterGeometry = new THREE.PlaneGeometry(10000, 10000);
+    const waterNormals = new THREE.TextureLoader().load('/src/assets/images/waternormals.jpg', function (texture) {
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    });
 
+    useFrame(state => {
+
+        water.material.uniforms[ 'time' ].value += 1.0 / 60.0;
+    })
+
+    const water = new Water(
+        waterGeometry,
+        {
+            textureWidth: 512,
+            textureHeight: 512,
+            waterNormals,
+            sunDirection: new THREE.Vector3(),
+            sunColor: 0xffffff,
+            waterColor: 0x001e0f,
+            distortionScale: 3.7,
+            fog: scene.fog !== undefined
+        }
+    );
+
+    water.rotation.x = -Math.PI / 2;
+
+    return <primitive object={water} />;
+}
 
 function Explorer() {
 
     return (
         <div className={'w-full h-screen '}>
             <Canvas className={'w-full h-full'}>
-
                 <ambientLight intensity={2} />
-                <Sky
-                    distance={450000} // Sets the sky sphere's distance from the center of the scene
-                    sunPosition={[100, 1, 0]} // Position of the sun [x, y, z]
-                    // inclination={0} // Sun elevation
-                    // azimuth={0.25} // Sun rotation
-                    // turbidity={1} // Sun brightness
-                />
-                {/*<WaterEffect />*/}
+                <WaterEffect />
                 <FBXModel position={[0, 0, 0]} path={'/src/assets/model/1.fbx'} index={0} xpos={-100} ypos={60} zpos={70}/>
                 <FBXModel position={[0, 0, 0]} path={'/src/assets/model/2.fbx'} index={1} xpos={-100} ypos={60} zpos={70}/>
                 <FBXModel position={[0, 0, 0]} path={'/src/assets/model/3.fbx'} index={2} xpos={100} ypos={60} zpos={140}/>
                 <FBXModel position={[0, 0, 0]} path={'/src/assets/model/4.fbx'} index={3} />
                 <FBXModel position={[0, 0, 0]} path={'/src/assets/model/5.fbx'} index={4} xpos={-100} ypos={60} zpos={250}/>
 
-                {/*<Controls />*/}
+                <Controls />
             </Canvas>
         </div>
     );
