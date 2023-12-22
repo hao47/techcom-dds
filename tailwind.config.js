@@ -4,15 +4,18 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-
-
   theme: {
-    fontFamily:{
-      montserrat:['Montserrat',' sans-serif'],
-      poppins:['Poppins',' sans-serif'],
+    fontFamily: {
+      montserrat: ['Montserrat', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
+      dela: ['Monsieur La Doulaise', 'cursive'],
+      inter: ['Inter', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      radialGradientColors: theme => theme('colors'),
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-gradients'),
+  ],
 }
-

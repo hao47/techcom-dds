@@ -1,0 +1,76 @@
+.glass-container {
+    background: linear-gradient(to right,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.17),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.13)
+    );
+    backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+}
+.stroke-class {
+    font-family: 'Montserrat Alternatif', sans-serif;
+
+}
+
+.bg-custom{
+    background-image: url("/src/assets/images/perempuan-footer.png");
+ }
+.bg-custom-lagi{
+    background-image: url("/src/assets/images/gunung.png");
+}
+.bg-custom-lagi-bang{
+    background-image: url("/src/assets/images/orang.png");
+}
+
+.bg-custom-lagi-banga{
+    background-image: url("/src/assets/images/anak.png");
+}
+.bg-custom-lagii{
+    background-image: url("/src/assets/images/gotong.png");
+}
+
+.bg-custom-lagiii{
+    background-image: url("/src/assets/images/gerobak.png");
+}
+
+.bg-custom-lagi-bang::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0); /* Ubah nilai opacity sesuai kebutuhan */
+    z-index: -1; /* Pastikan pseudo-element berada di belakang konten */
+}
+html {
+    overflow-y: scroll;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+body {
+    overflow-y: visible;
+    position: relative;
+background:  #191919;
+    scroll-behavior: smooth;
+}
+
+
+.containerss {
+    width: 600vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panel {
+    width: 100vw;
+    height: 100vh;
+}
+
+.no-focus-border:focus {
+    border: none;
+    outline: none;
+}

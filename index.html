@@ -4,16 +4,57 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Techome DDS</title>
+    <title>TechomFest DDS</title>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./src/style/index.css">
-    <link rel="stylesheet" href="/css/video-react.css" />
+    <link rel="stylesheet" href="./src/style/style.css">
+
+    <link rel="stylesheet" href="/src/style/test.css">
+    <link rel="stylesheet" href="/src/style/transition.css">
   </head>
-  <body>
+  <body  >
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!--    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
+  <script>
+    var oilCanvas = document.getElementById("oilChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var oilData = {
+      labels: [
+        "Saudi Arabia",
+        "Russia",
+        "Iraq",
+        "United Arab Emirates",
+        "Canada"
+      ],
+      datasets: [
+        {
+          data: [133.3, 86.2, 52.2, 51.2, 50.2],
+          backgroundColor: [
+            "#FF6384",
+            "#63FF84",
+            "#84FF63",
+            "#8463FF",
+            "#6384FF"
+          ]
+        }]
+    };
+
+    var pieChart = new Chart(oilCanvas, {
+      type: 'pie',
+      data: oilData
+    });
+
+  </script>
   </body>
 </html>

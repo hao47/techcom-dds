@@ -1,0 +1,33 @@
+.details {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+/*.right {*/
+/*    width:50%;*/
+/*    height:100vh;*/
+/*    display:flex;*/
+/*    flex-direction:column;*/
+/*    justify-content:space-between;*/
+/*}*/
+
+.photos {
+    width:40vw;
+    height:40vw;
+    position:relative;
+}
+
+.bg-opacitya {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(175, 45, 45, 0.18); /* Warna putih dengan opacity 70% */
+    z-index: -1;
+}
+
