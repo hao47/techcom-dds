@@ -99,7 +99,7 @@ console.log(-innerHeight /2)
 
 
     return (
-        <div className="gallery flex max-[600px]:block   bg-[#D7D7D7]">
+        <div className="gallery flex max-[600px]:block bg-[#D7D7D7]">
 
             <div
                 className="right w-1/2 h-[100vh]  flex-col justify-between flex  items-center bg-black -translate-x-[100%] max-[600px]:w-full max-[600px]:h-[440px]">

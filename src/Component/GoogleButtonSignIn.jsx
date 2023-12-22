@@ -63,7 +63,7 @@ const  handleclick = () => {
 
     return (
       <>
-          {value?<p>{value}</p>:   <div onClick={() => handleclick()} className="border-2 py-2 px-5 rounded-full border-white hover:bg-white hover:text-black group cursor-pointer max-[600px]:hidden">
+          {value?<p>{value}</p>:   <div onClick={() => handleclick()} className="border-2 py-2 px-5 rounded-full border-white hover:bg-white hover:text-black group cursor-pointer max-[800px]:hidden">
 
               <p className="text-white  group-hover:text-black  font-poppins text-[1rem] ">Umpan Balik</p>
           </div>}
